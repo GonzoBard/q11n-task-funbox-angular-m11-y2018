@@ -1,0 +1,21 @@
+$font-height-normal: 1.2;
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$color-black: #000000;
+$color-black85: rgba(0, 0, 0, .85);
+$color-black55: rgba(0, 0, 0, .55);
+$color-dove-gray: #666666;
+$color-pacific-blue: #0099cc;
+$color-dodger-blue: #3399ff;
+$color-white: #ffffff;
+
+//
+// ADAPTIVE
+//
+$grid-breakpoint-mobile: 320px;
+$grid-breakpoint-tablet: 720px;
+$grid-breakpoint-desktop: 1120px;

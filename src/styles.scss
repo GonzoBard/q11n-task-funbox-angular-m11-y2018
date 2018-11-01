@@ -1,0 +1,47 @@
+@import "scss/mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  @include wh100();
+  @include reset-margin-padding();
+}
+
+body {
+  min-width: $grid-breakpoint-mobile;
+
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  @include fonts(13px, $font-height-normal, $font-weight-normal, normal, $color-white);
+
+  background-color: $color-black85;
+  background-image: linear-gradient(to bottom, $color-black55, transparent, $color-black55),
+  url("assets/img/bg.png");
+  background-attachment: fixed, scroll;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//
+// UTIL
+//
+.visually-hidden:not(:focus):not(:active) { // https://allyjs.io/tutorials/hiding-elements.html#2017-edition-of-visuallyhidden
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

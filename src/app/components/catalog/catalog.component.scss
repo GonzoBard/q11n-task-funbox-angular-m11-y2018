@@ -1,0 +1,68 @@
+@import "../../../scss/mixins";
+
+.catalog {
+  @include wh100();
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.catalog__title {
+  @include reset-margin-padding();
+  margin-bottom: 37px;
+
+  font-family: 'Exo 2', sans-serif;
+  @include fonts(36px, 36px, $font-weight-thin, normal, $color-white);
+  text-align: center;
+}
+
+.catalog__list {
+  @include reset-list();
+  margin-top: -10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+//
+// ADAPTIVE
+//
+@include media-tablet {
+
+  .catalog__list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .catalog__item:first-child {
+    margin-right: 80px;
+  }
+
+  .catalog__item:last-child {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+
+}
+
+@include media-desktop {
+
+  .catalog {
+    justify-content: center;
+  }
+
+  .catalog__item:not(:last-child) {
+    margin-right: 80px;
+  }
+
+  .catalog__item:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="catalog-item__top-wrap  catalog-item__top-wrap--bg-folded-corner">
+  <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner">
+    <p class="catalog-item__intro">{{item.intro}}</p>
+    <p class="catalog-item__trademark">
+      <strong>{{item.trademark}}</strong>
+    </p>
+    <p class="catalog-item__additive">{{item.additive}}</p>
+    <div class="catalog-item__benefit">
+      <p><b>{{item.servingsNumber}}</b> порций</p>
+      <p><b>{{item.numberOfGiftMice}}</b> мыши в подарок</p>
+      <p>{{item.isClientSatisfiedFlag ? 'заказчик доволен': '&nbsp;'}}</p>
+    </div>
+    <div class="catalog-item__weight">
+      <p class="catalog-item__weight-value">{{item.weightValue}}</p>
+      <p class="catalog-item__weight-measure-unit">{{item.weightMeasureUnit}}</p>
+    </div>
+  </div>
+</div>
+<div class="catalog-item__bottom">
+  <p class="catalog-item__buy-cat">Чего сидишь? Порадуй котэ, <a class="catalog-item__bottom-link" href="#">купи</a>.</p>
+  <p class="visually-hidden  catalog-item__description">{{item.description}}</p>
+  <p class="visually-hidden  catalog-item__sold-out">Печалька, {{item.additive}} закончился.</p>
+</div>

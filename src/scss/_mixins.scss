@@ -1,0 +1,73 @@
+@import "config";
+
+@mixin wh100() {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin reset-margin-padding() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin fonts2($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin fonts3($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@mixin fonts4($size, $height, $weight, $style) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin fonts($size, $height, $weight, $style, $color) {
+  @include fonts4($size, $height, $weight, $style);
+  color: $color;
+}
+
+@mixin folded-corner($color, $bg-size, $border-radius) {
+  background: linear-gradient(to bottom right, transparent 49.9%, $color 50%),
+  linear-gradient(to right, $color, $color),
+  linear-gradient(to right, $color, $color);
+  background-size: $bg-size $bg-size, 100% 100%, 100% 100%;
+  background-position: left 0, left $bg-size, ($bg-size - 0.5px) 100%;
+  background-repeat: no-repeat;
+  border-top-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+}
+
+//
+// ADAPTIVE
+//
+@mixin media-mobile() {
+  @media (min-width: $grid-breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin media-tablet() {
+  @media (min-width: $grid-breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin media-desktop() {
+  @media (min-width: $grid-breakpoint-desktop) {
+    @content;
+  }
+}

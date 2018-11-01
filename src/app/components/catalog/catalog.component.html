@@ -1,0 +1,15 @@
+<section class="catalog">
+
+  <h2 class="visually-hidden">Каталог</h2>
+
+  <p class="catalog__title">Ты сегодня покормил кота?</p>
+
+  <ul class="catalog__list">
+
+    <li class="catalog-item  catalog__item" *ngFor="let item of items">
+      <app-catalog-item [item]="item"></app-catalog-item>
+    </li>
+
+  </ul>
+
+</section>

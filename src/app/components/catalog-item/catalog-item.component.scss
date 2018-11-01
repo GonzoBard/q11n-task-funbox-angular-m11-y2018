@@ -1,0 +1,124 @@
+@import "../../../scss/mixins";
+
+.catalog-item {
+  width: 320px;
+}
+
+.catalog-item__top-wrap {
+  display: flex;
+}
+
+.catalog-item__top-wrap--bg-folded-corner {
+  @include folded-corner($color-pacific-blue, 40px, 10px);
+}
+
+.catalog-item__top {
+  @include wh100();
+  margin: 3px;
+
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include wh100();
+
+    background: transparent url("../../../assets/img/cat.png") no-repeat -27px 205px;
+  }
+}
+
+.catalog-item__top--item--bg-folded-corner {
+  @include folded-corner($color-white, 40px, 8px);
+}
+
+.catalog-item__intro {
+  @include reset-margin-padding();
+  padding-top: 20px;
+  padding-left: 45px;
+
+  @include fonts(14px, $font-height-normal, $font-weight-normal, normal, $color-dove-gray);
+  letter-spacing: 1px;
+}
+
+.catalog-item__trademark {
+  @include reset-margin-padding();
+  padding-top: 6px;
+  padding-left: 44px;
+
+  @include fonts(48px, $font-height-normal, $font-weight-bold, normal, $color-black);
+}
+
+.catalog-item__additive {
+  @include reset-margin-padding();
+  padding-left: 45px;
+
+  @include fonts(24px, 24px, $font-weight-bold, normal, $color-black);
+}
+
+.catalog-item__benefit {
+  margin-top: 16px;
+  margin-bottom: 288px;
+  //margin-bottom: 20px;
+
+  p {
+    @include reset-margin-padding();
+    padding-left: 45px;
+
+    @include fonts(14px, 16px, $font-weight-normal, normal, $color-dove-gray);
+  }
+}
+
+.catalog-item__weight {
+  position: absolute;
+  bottom: 14px;
+  right: 12px;
+
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  @include reset-margin-padding();
+
+  background-color: $color-pacific-blue;
+  border-radius: 50%;
+  border-width: 0;
+
+  text-align: center;
+  vertical-align: center;
+}
+
+.catalog-item__weight-value {
+  @include reset-margin-padding();
+  padding-top: 11px;
+
+  @include fonts(42px, 42px, $font-weight-normal, normal, $color-white);
+}
+
+.catalog-item__weight-measure-unit {
+  @include reset-margin-padding();
+  margin-top: -1px;
+
+  @include fonts(21px, 21px, $font-weight-normal, normal, $color-white);
+}
+
+.catalog-item__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include fonts(13px, 15px, $font-weight-normal, normal, $color-white);
+}
+
+.catalog-item__bottom-link {
+  border-bottom: 1px dashed $color-pacific-blue;
+
+  color: $color-pacific-blue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-dodger-blue;
+  }
+}
