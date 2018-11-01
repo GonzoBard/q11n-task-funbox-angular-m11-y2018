@@ -44,7 +44,7 @@
   linear-gradient(to right, $color, $color),
   linear-gradient(to right, $color, $color);
   background-size: $bg-size $bg-size, 100% 100%, 100% 100%;
-  background-position: left 0, left $bg-size, ($bg-size - 0.5px) 100%;
+  background-position: left 0, left ($bg-size - 0.5px), ($bg-size - 0.5px) 100%;
   background-repeat: no-repeat;
   border-top-right-radius: $border-radius;
   border-bottom-left-radius: $border-radius;

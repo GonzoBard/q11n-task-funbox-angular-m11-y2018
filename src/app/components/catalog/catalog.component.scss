@@ -19,6 +19,7 @@
 }
 
 .catalog__list {
+  width: 100%; // special for IE11
   @include reset-list();
   margin-top: -10px;
 
