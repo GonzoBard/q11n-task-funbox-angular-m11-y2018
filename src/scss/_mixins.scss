@@ -66,6 +66,12 @@
   }
 }
 
+@mixin media-pre-desktop() {
+  @media (min-width: $grid-breakpoint-pre-desktop) {
+    @content;
+  }
+}
+
 @mixin media-desktop() {
   @media (min-width: $grid-breakpoint-desktop) {
     @content;

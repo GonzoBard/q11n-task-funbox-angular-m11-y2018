@@ -42,14 +42,14 @@
   }
 
   .catalog__item:first-child {
-    margin-right: 80px;
+    margin-right: 11%;
   }
+}
 
-  .catalog__item:last-child {
-    margin-right: 80px;
-    margin-left: 80px;
+@include media-pre-desktop {
+  .catalog__item:first-child {
+    margin-right: 18%;
   }
-
 }
 
 @include media-desktop {
@@ -59,7 +59,7 @@
   }
 
   .catalog__item:not(:last-child) {
-    margin-right: 80px;
+    margin-right: 6%;
   }
 
   .catalog__item:last-child {
