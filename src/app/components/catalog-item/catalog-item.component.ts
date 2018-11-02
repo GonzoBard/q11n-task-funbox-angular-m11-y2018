@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {AppGlobals} from '../../globals';
 
 @Component({
@@ -7,9 +7,14 @@ import {AppGlobals} from '../../globals';
   styleUrls: ['./catalog-item.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CatalogItemComponent {
+export class CatalogItemComponent implements OnInit {
 
   @Input() item: CatalogItemComponent;
+
+  isSelected = false;
+  isDisabled = false;
+  isMouseEnter = false;
+  isMouseLeave = false;
 
   intro: string;
   trademark: string;
@@ -46,5 +51,19 @@ export class CatalogItemComponent {
     item.isSoldOut = isSoldOut;
 
     return item;
+  }
+
+  ngOnInit(): void {
+    this.isDisabled = this.item.isSoldOut;
+  }
+
+  isDefaultHover(): boolean {
+    return !this.isDisabled && !this.isSelected && this.isMouseEnter;
+  }
+
+  selectedToggle() {
+    if (!this.isDisabled) {
+      this.isSelected = !this.isSelected;
+    }
   }
 }

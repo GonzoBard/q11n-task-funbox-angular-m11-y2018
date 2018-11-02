@@ -8,11 +8,21 @@
   display: flex;
 }
 
+$top-wrap__bg-size: 40px;
+$top-wrap__border-radius: 10px;
 .catalog-item__top-wrap--bg-folded-corner {
-  @include folded-corner($color-pacific-blue, 40px, 10px);
+  @include folded-corner($color-pacific-blue, $top-wrap__bg-size, $top-wrap__border-radius);
 }
 
-$catalog-item__top__border-radius: 8px;
+.catalog-item__top-wrap--bg-folded-corner-hover {
+  @include folded-corner($color-dodger-blue, $top-wrap__bg-size, $top-wrap__border-radius);
+}
+
+.catalog-item__top-wrap--bg-folded-corner-selected {
+  @include folded-corner($color-lipstick, $top-wrap__bg-size, $top-wrap__border-radius);
+}
+
+$top__border-radius: 8px;
 .catalog-item__top {
   @include wh100();
   margin: 3px;
@@ -28,12 +38,12 @@ $catalog-item__top__border-radius: 8px;
     @include wh100();
 
     background: transparent url("/assets/img/cat.png") no-repeat -27px 205px;
-    border-radius: $catalog-item__top__border-radius;
+    border-radius: $top__border-radius;
   }
 }
 
 .catalog-item__top--item--bg-folded-corner {
-  @include folded-corner($color-white, 40px, $catalog-item__top__border-radius);
+  @include folded-corner($color-white, 40px, $top__border-radius);
 }
 
 .catalog-item__intro {
@@ -98,6 +108,14 @@ $catalog-item__top__border-radius: 8px;
   vertical-align: center;
 }
 
+.catalog-item__weight--hover {
+  background-color: $color-dodger-blue;
+}
+
+.catalog-item__weight--selected {
+  background-color: $color-lipstick;
+}
+
 .catalog-item__weight-value {
   @include reset-margin-padding();
   padding-top: 11px;
@@ -118,14 +136,40 @@ $catalog-item__top__border-radius: 8px;
   justify-content: flex-start;
   align-items: center;
 
-  @include fonts(13px, 15px, $font-weight-normal, normal, $color-white);
+  p {
+    display: inline-block;
+    @include reset-margin-padding();
+    margin-top: 13px;
+    margin-bottom: 13px;
+    height: 16px;
+    @include fonts4(13px, 15px, $font-weight-normal, normal);
+  }
 }
 
-.catalog-item__bottom-link {
+.catalog-item__buy-cat,
+.catalog-item__description {
+  color: $color-white;
+}
+
+.catalog-item__sold-out {
+  color: $color-laser-lemon;
+}
+
+.catalog-item__bottom-btn {
+  @include reset-margin-padding();
+  border: none;
   border-bottom: 1px dashed $color-pacific-blue;
 
+  background-color: transparent;
   color: $color-pacific-blue;
   text-decoration: none;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 100%;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
 
   &:hover,
   &:focus {
