@@ -12,6 +12,7 @@
   @include folded-corner($color-pacific-blue, 40px, 10px);
 }
 
+$catalog-item__top__border-radius: 8px;
 .catalog-item__top {
   @include wh100();
   margin: 3px;
@@ -21,22 +22,25 @@
   &:before {
     content: "";
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     @include wh100();
 
     background: transparent url("/assets/img/cat.png") no-repeat -27px 205px;
+    border-radius: $catalog-item__top__border-radius;
   }
 }
 
 .catalog-item__top--item--bg-folded-corner {
-  @include folded-corner($color-white, 40px, 8px);
+  @include folded-corner($color-white, 40px, $catalog-item__top__border-radius);
 }
 
 .catalog-item__intro {
   @include reset-margin-padding();
   padding-top: 20px;
   padding-left: 45px;
+  padding-right: 10px;
 
   @include fonts(14px, $font-height-normal, $font-weight-normal, normal, $color-dove-gray);
   letter-spacing: 1px;
@@ -45,7 +49,9 @@
 .catalog-item__trademark {
   @include reset-margin-padding();
   padding-top: 6px;
-  padding-left: 44px;
+  padding-left: 43px;
+  padding-right: 10px;
+  @include relative-z-index(2);
 
   @include fonts(48px, $font-height-normal, $font-weight-bold, normal, $color-black);
 }
@@ -53,18 +59,21 @@
 .catalog-item__additive {
   @include reset-margin-padding();
   padding-left: 45px;
+  padding-right: 10px;
+  @include relative-z-index(2);
 
-  @include fonts(24px, 24px, $font-weight-bold, normal, $color-black);
+  @include fonts(24px, 27px, $font-weight-bold, normal, $color-black);
 }
 
 .catalog-item__benefit {
-  margin-top: 16px;
+  margin-top: 13px;
   margin-bottom: 288px;
-  //margin-bottom: 20px;
+  @include relative-z-index(2);
 
   p {
     @include reset-margin-padding();
-    padding-left: 45px;
+    padding-left: 44px;
+    padding-right: 10px;
 
     @include fonts(14px, 16px, $font-weight-normal, normal, $color-dove-gray);
   }
@@ -72,6 +81,7 @@
 
 .catalog-item__weight {
   position: absolute;
+  z-index: 2;
   bottom: 14px;
   right: 12px;
 
@@ -121,4 +131,8 @@
   &:focus {
     color: $color-dodger-blue;
   }
+}
+
+.bg-white {
+  background-color: $color-white;
 }

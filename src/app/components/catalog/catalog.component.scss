@@ -38,6 +38,7 @@
   .catalog__list {
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
@@ -56,14 +57,14 @@
 
   .catalog {
     justify-content: center;
+    align-items: center;
+  }
+
+  .catalog__list {
+    align-items: center;
   }
 
   .catalog__item:not(:last-child) {
     margin-right: 6%;
-  }
-
-  .catalog__item:last-child {
-    margin-right: 0;
-    margin-left: 0;
   }
 }

@@ -1,4 +1,5 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {AppGlobals} from '../../globals';
 
 @Component({
   selector: 'app-catalog-item',
@@ -20,6 +21,10 @@ export class CatalogItemComponent {
   weightMeasureUnit: string;
   description: string;
   isSoldOut: boolean;
+
+  getNumEnding = AppGlobals.getNumEnding;
+  aEndingsServings = ['порция', 'порции', 'порций'];
+  aEndingsMouse = ['мышь', 'мыши', 'мышей'];
 
   constructor() {
   }

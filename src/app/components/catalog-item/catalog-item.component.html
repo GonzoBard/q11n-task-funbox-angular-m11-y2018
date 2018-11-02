@@ -1,14 +1,22 @@
 <div class="catalog-item__top-wrap  catalog-item__top-wrap--bg-folded-corner">
   <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner">
+    <!--before-->
     <p class="catalog-item__intro">{{item.intro}}</p>
     <p class="catalog-item__trademark">
-      <strong>{{item.trademark}}</strong>
+      <strong><span class="bg-white">{{item.trademark}}</span></strong>
     </p>
-    <p class="catalog-item__additive">{{item.additive}}</p>
+    <p class="catalog-item__additive"><span class="bg-white">{{item.additive}}</span></p>
     <div class="catalog-item__benefit">
-      <p><b>{{item.servingsNumber}}</b> порций</p>
-      <p><b>{{item.numberOfGiftMice}}</b> мыши в подарок</p>
-      <p>{{item.isClientSatisfiedFlag ? 'заказчик доволен': '&nbsp;'}}</p>
+      <p><span class="bg-white">
+        <b>{{item.servingsNumber}}</b> {{getNumEnding(item.servingsNumber, aEndingsServings)}}
+      </span></p>
+      <p><span class="bg-white">
+        <b>{{item.numberOfGiftMice === 1 ? '': item.numberOfGiftMice}}</b>
+        {{getNumEnding(item.numberOfGiftMice, aEndingsMouse)}} в подарок
+      </span></p>
+      <p><span class="bg-white">
+        {{item.isClientSatisfiedFlag ? 'заказчик доволен': '&nbsp;'}}
+      </span></p>
     </div>
     <div class="catalog-item__weight">
       <p class="catalog-item__weight-value">{{item.weightValue}}</p>
