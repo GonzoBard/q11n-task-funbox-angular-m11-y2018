@@ -12,6 +12,7 @@ export class CatalogItemComponent implements OnInit {
   @Input() item: CatalogItemComponent;
 
   isSelected = false;
+  canSelectedBeHover = false;
   isDisabled = false;
   isMouseEnter = false;
   isMouseLeave = false;
@@ -57,6 +58,14 @@ export class CatalogItemComponent implements OnInit {
     this.isDisabled = this.item.isSoldOut;
   }
 
+  setMouseLeave(): void {
+    this.isMouseEnter = false;
+    this.isMouseLeave = true;
+    if (this.isSelected && !this.canSelectedBeHover) {
+      this.canSelectedBeHover = true;
+    }
+  }
+
   isDefaultHover(): boolean {
     return !this.isDisabled && !this.isSelected && this.isMouseEnter;
   }
@@ -64,6 +73,14 @@ export class CatalogItemComponent implements OnInit {
   selectedToggle() {
     if (!this.isDisabled) {
       this.isSelected = !this.isSelected;
+
+      if (!this.isSelected) {
+        this.canSelectedBeHover = false;
+      }
     }
+  }
+
+  isSelectedHover() {
+    return !this.isDisabled && this.canSelectedBeHover && this.isMouseEnter;
   }
 }

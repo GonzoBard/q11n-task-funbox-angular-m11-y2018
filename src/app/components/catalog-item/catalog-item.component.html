@@ -1,10 +1,11 @@
 <div class="catalog-item__top-wrap  catalog-item__top-wrap--bg-folded-corner"
      [ngClass]="{
        'catalog-item__top-wrap--bg-folded-corner-hover': isDefaultHover(),
-       'catalog-item__top-wrap--bg-folded-corner-selected': isSelected  }"
+       'catalog-item__top-wrap--bg-folded-corner-selected': isSelected,
+       'catalog-item__top-wrap--bg-folded-corner-selected-hover': isSelectedHover()  }"
      (click)="selectedToggle()"
      (mouseenter)="isMouseEnter=true; isMouseLeave=false"
-     (mouseleave)="isMouseEnter=false; isMouseLeave=true">
+     (mouseleave)="setMouseLeave()">
 
   <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner">
 
@@ -35,7 +36,8 @@
     <div class="catalog-item__weight"
          [ngClass]="{
            'catalog-item__weight--hover': isDefaultHover(),
-           'catalog-item__weight--selected': isSelected     }">
+           'catalog-item__weight--selected': isSelected,
+           'catalog-item__weight--selected-hover': isSelectedHover()  }">
       <p class="catalog-item__weight-value">{{item.weightValue}}</p>
       <p class="catalog-item__weight-measure-unit">{{item.weightMeasureUnit}}</p>
     </div>
