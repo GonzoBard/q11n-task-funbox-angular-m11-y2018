@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "prod": "ng build --prod --base-href /q11n/",
+    "prod": "ng build --prod --base-href /q11n/funbox/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
