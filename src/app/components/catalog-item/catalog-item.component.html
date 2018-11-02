@@ -1,43 +1,56 @@
+<div class="catalog-item__top-wrap-disabled-backing" *ngIf="isDisabled"></div>
+
 <div class="catalog-item__top-wrap  catalog-item__top-wrap--bg-folded-corner"
      [ngClass]="{
        'catalog-item__top-wrap--bg-folded-corner-hover': isDefaultHover(),
        'catalog-item__top-wrap--bg-folded-corner-selected': isSelected,
-       'catalog-item__top-wrap--bg-folded-corner-selected-hover': isSelectedHover()  }"
+       'catalog-item__top-wrap--bg-folded-corner-selected-hover': isSelectedHover(),
+       'catalog-item__top-wrap--bg-folded-corner-disabled': isDisabled  }"
      (click)="selectedToggle()"
      (mouseenter)="isMouseEnter=true; isMouseLeave=false"
      (mouseleave)="setMouseLeave()">
 
   <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner">
 
-    <p class="catalog-item__intro">
+    <p class="catalog-item__intro"
+       [ngClass]="{ 'opacity50': isDisabled }">
       {{item.intro}}
     </p>
 
-    <p class="catalog-item__trademark">
+    <p class="catalog-item__trademark"
+       [ngClass]="{ 'opacity50': isDisabled }">
       <strong><span class="bg-white">{{item.trademark}}</span></strong>
     </p>
 
-    <p class="catalog-item__additive">
+    <p class="catalog-item__additive"
+       [ngClass]="{ 'opacity50': isDisabled }">
       <span class="bg-white">{{item.additive}}</span>
     </p>
 
-    <div class="catalog-item__benefit">
+    <div class="catalog-item__benefit"
+         [ngClass]="{ 'opacity50': isDisabled }">
+
       <p><span class="bg-white">
         <b>{{item.servingsNumber}}</b> {{getNumEnding(item.servingsNumber, aEndingsServings)}}
       </span></p>
+
       <p><span class="bg-white">
         <b>{{item.numberOfGiftMice === 1 ? '': item.numberOfGiftMice}}</b>
         {{getNumEnding(item.numberOfGiftMice, aEndingsMouse)}} в подарок
       </span></p>
+
       <p><span class="bg-white">
         {{item.isClientSatisfiedFlag ? 'заказчик доволен': '&nbsp;'}}
       </span></p>
+
     </div>
+
     <div class="catalog-item__weight"
          [ngClass]="{
            'catalog-item__weight--hover': isDefaultHover(),
            'catalog-item__weight--selected': isSelected,
-           'catalog-item__weight--selected-hover': isSelectedHover()  }">
+           'catalog-item__weight--selected-hover': isSelectedHover(),
+           'catalog-item__weight--disabled': isDisabled  }">
       <p class="catalog-item__weight-value">{{item.weightValue}}</p>
       <p class="catalog-item__weight-measure-unit">{{item.weightMeasureUnit}}</p>
     </div>

@@ -2,6 +2,7 @@
 
 .catalog-item {
   width: 320px;
+  position: relative;
 }
 
 .catalog-item__top-wrap {
@@ -24,6 +25,10 @@ $top-wrap__border-radius: 10px;
 
 .catalog-item__top-wrap--bg-folded-corner-selected-hover {
   @include folded-corner($color-radical-red, $top-wrap__bg-size, $top-wrap__border-radius);
+}
+
+.catalog-item__top-wrap--bg-folded-corner-disabled {
+  @include folded-corner($color-silver, $top-wrap__bg-size, $top-wrap__border-radius);
 }
 
 $top__border-radius: 8px;
@@ -124,6 +129,10 @@ $top__border-radius: 8px;
   background-color: $color-radical-red;
 }
 
+.catalog-item__weight--disabled {
+  background-color: $color-silver;
+}
+
 .catalog-item__weight-value {
   @include reset-margin-padding();
   padding-top: 11px;
@@ -187,4 +196,8 @@ $top__border-radius: 8px;
 
 .bg-white {
   background-color: $color-white;
+}
+
+.opacity50 {
+  opacity: 0.5;
 }
