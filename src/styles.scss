@@ -45,3 +45,11 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.bg-white {
+  background-color: $color-white;
+}
+
+.opacity50 {
+  opacity: 0.5;
+}

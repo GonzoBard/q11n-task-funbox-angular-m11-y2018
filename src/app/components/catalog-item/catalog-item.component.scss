@@ -29,10 +29,13 @@ $top-wrap__border-radius: 10px;
 
 .catalog-item__top-wrap--bg-folded-corner-disabled {
   @include folded-corner($color-silver, $top-wrap__bg-size, $top-wrap__border-radius);
+  cursor: not-allowed;
+  user-select: none;
 }
 
 $top__border-radius: 8px;
-.catalog-item__top {
+.catalog-item__top,
+.catalog-item__top--disabled {
   @include wh100();
   margin: 3px;
 
@@ -48,6 +51,12 @@ $top__border-radius: 8px;
 
     background: transparent url("/assets/img/cat.png") no-repeat -27px 205px;
     border-radius: $top__border-radius;
+  }
+}
+
+.catalog-item__top--disabled {
+  &:before {
+    opacity: 0.5;
   }
 }
 
@@ -192,12 +201,4 @@ $top__border-radius: 8px;
   &:focus {
     color: $color-dodger-blue;
   }
-}
-
-.bg-white {
-  background-color: $color-white;
-}
-
-.opacity50 {
-  opacity: 0.5;
 }

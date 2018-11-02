@@ -10,7 +10,8 @@
      (mouseenter)="isMouseEnter=true; isMouseLeave=false"
      (mouseleave)="setMouseLeave()">
 
-  <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner">
+  <div class="catalog-item__top  catalog-item__top--item--bg-folded-corner"
+       [ngClass]="{ 'catalog-item__top--disabled': isDisabled }">
 
     <p class="catalog-item__intro"
        [ngClass]="{ 'opacity50': isDisabled }">
@@ -59,7 +60,8 @@
 
 <div class="catalog-item__bottom">
 
-  <p class="catalog-item__buy-cat" *ngIf="!isSelected && !isDisabled">Чего сидишь? Порадуй котэ, <button type="button" class="catalog-item__bottom-btn" (click)="selectedToggle()">купи</button>.</p>
+  <p class="catalog-item__buy-cat" *ngIf="!isSelected && !isDisabled">
+    Чего сидишь? Порадуй котэ, <button type="button" class="catalog-item__bottom-btn" (click)="selectedToggle()">купи</button>.</p>
 
   <p class="catalog-item__description" *ngIf="isSelected">
     {{item.description}}
